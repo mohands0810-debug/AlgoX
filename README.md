@@ -4,12 +4,12 @@
 
 **Autonomous Multi-Crew Incident Scheduling Optimization Engine & Mission Control Dashboard**
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://algo-x-iota.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://algo-x-op.vercel.app/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-3.0%2B-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-[**Explore Live Application →**](https://algo-x-iota.vercel.app)
+[**Explore Live Application →**](https://algo-x-op.vercel.app/)
 
 </div>
 
@@ -197,7 +197,7 @@ Open **[http://127.0.0.1:5000](http://127.0.0.1:5000)** in your browser.
 AlgoX is configured for instant serverless deployment on **Vercel**:
 - Builder: `@vercel/python`
 - Stateless synchronous execution optimized for serverless execution timeouts
-- Live URL: **[https://algo-x-iota.vercel.app](https://algo-x-iota.vercel.app)**
+- Live URL: **[https://algo-x-op.vercel.app/](https://algo-x-op.vercel.app/)**
 
 ---
 
