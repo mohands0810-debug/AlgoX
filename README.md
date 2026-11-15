@@ -11,6 +11,10 @@
 
 [**Explore Live Application →**](https://algo-x-op.vercel.app/)
 
+<br/><br/>
+
+<img src="docs/images/hero-dashboard.png" alt="AlgoX Mission Control Dashboard" width="100%" />
+
 </div>
 
 ---
@@ -125,15 +129,61 @@ Evaluated across standard benchmarks (1,000,000 iterations, Seed: `2026`):
 
 ---
 
-## 🖥️ Mission Control Web UI
+## 🖥️ Interactive Mission Control Interface
 
-The repository includes a modern, responsive web application built with **Flask**, **Vanilla JavaScript (ES6+)**, and **HTML5 Canvas**:
+The repository includes a modern, high-performance web dashboard built with **Flask**, **Vanilla JavaScript (ES6+)**, and **HTML5 Canvas**, providing mission commanders with complete real-time visibility into colony emergencies, dispatch schedules, and algorithmic convergence:
 
-- **Real-Time Canvas Gantt Chart:** 60 FPS interactive crew dispatch timeline supporting mouse-drag panning, zoom scaling, and per-incident hover tooltips.
-- **Interactive Score Calculator:** Visual decay-curve simulator demonstrating real-time score degradation.
-- **Telemetry & Severity Analytics:** Distribution metrics comparing points captured versus theoretical maximum ceiling.
-- **Searchable Schedule Data Table:** Paginated, multi-column sortable table with severity pills and crew badges.
-- **Zero-Latency In-Browser Export:** Instant `submission.json` generation and clipboard copy.
+### 1. Incident Briefing & Interactive Decay Simulation
+*Detailed overview of Martian operational divisions (`Structural`, `Medical`, `Life Support`) accompanied by an interactive decay curve simulator for immediate formula verification.*
+
+<div align="center">
+  <img src="docs/images/briefing-calculator.png" alt="Incident Briefing & Decay Score Calculator" width="100%" />
+</div>
+
+<br/>
+
+### 2. Dispatch Console & Solver Configuration
+*Dataset dropzone supporting drag-and-drop CSV logs, preset benchmark datasets, Simulated Annealing iterations, cooling rate adjustments, and random seed control.*
+
+<div align="center">
+  <img src="docs/images/dispatch-console.png" alt="AlgoX Dispatch Console & Solver Controls" width="100%" />
+</div>
+
+<br/>
+
+### 3. Colony Safety Score & Telemetry KPIs
+*Executive results banner highlighting final Colony Safety Score (`1493.74`), official judge compliance badge (`● Valid submission`), score gain over baseline, and critical telemetry indicators.*
+
+<div align="center">
+  <img src="docs/images/results-dashboard.png" alt="Colony Safety Score & Telemetry KPI Metrics" width="100%" />
+</div>
+
+<br/>
+
+### 4. High-Performance Multi-Crew Gantt Timeline
+*Hardware-accelerated HTML5 Canvas dispatch timeline rendering concurrent schedules across Crew `E`, Crew `M`, and Crew `L`. Features cross-crew assistance hatching, hover tooltips, and real-time zoom/pan navigation.*
+
+<div align="center">
+  <img src="docs/images/gantt-timeline.png" alt="Multi-Crew Canvas Gantt Dispatch Timeline" width="100%" />
+</div>
+
+<br/>
+
+### 5. Comparative Optimization Analytics & Severity Distribution
+*Dual-panel optimization analytics tracking the performance leap from the greedy baseline across 4 parallel simulated annealing workers, alongside points captured vs theoretical ceiling per severity tier.*
+
+<div align="center">
+  <img src="docs/images/analytics-charts.png" alt="Optimization Run Comparison & Severity Analytics" width="100%" />
+</div>
+
+<br/>
+
+### 6. Comprehensive Schedule Inspector & Export Console
+*Interactive incident audit ledger featuring live search, crew filtering pills, start/end timestamps, penalty deductions, and zero-latency `submission.json` downloads.*
+
+<div align="center">
+  <img src="docs/images/schedule-table.png" alt="Incident Schedule Table & Export Console" width="100%" />
+</div>
 
 ---
 
@@ -144,8 +194,17 @@ AlgoX/
 ├── data/                                  # Benchmark incident logs
 │   ├── sample1.csv                        # 400 incidents (mixed categories)
 │   ├── sample2.csv                        # 400 incidents (high-severity distribution)
-│   └── sample3.csv                        # 400 incidents (burst arrival distribution)
-├── docs/                                  # Problem specification & rules
+│   ├── sample3.csv                        # 400 incidents (burst arrival distribution)
+│   └── demo.json                          # Pre-computed telemetry cache for demo preview
+├── docs/                                  # Documentation & UI assets
+│   ├── images/                            # High-resolution UI screenshots
+│   │   ├── hero-dashboard.png             # Landing & 3D Mars telemetry
+│   │   ├── briefing-calculator.png        # Crew specialization & decay curve
+│   │   ├── dispatch-console.png           # Dataset dropzone & solver settings
+│   │   ├── results-dashboard.png          # Score summary & 5 KPI telemetry cards
+│   │   ├── gantt-timeline.png             # 60 FPS Canvas Gantt dispatch chart
+│   │   ├── analytics-charts.png           # Multi-worker comparison & severity bars
+│   │   └── schedule-table.png             # Schedule data table & JSON export
 │   ├── AlgoX Problem Statement.pdf        # Formal competition problem brief
 │   └── AlgoX Rules, Evaluation and Marks.pdf # Evaluation rubric & validation rules
 ├── templates/
@@ -154,7 +213,9 @@ AlgoX/
 ├── judge.py                               # Official constraint validation engine
 ├── solve.py                               # Core metaheuristic solver & parallel annealer
 ├── requirements.txt                       # Minimal dependencies (Flask)
+├── run_web.bat                            # Windows 1-click batch launcher
 ├── vercel.json                            # Vercel serverless deployment config
+├── LICENSE                                # MIT License
 └── README.md                              # Technical documentation
 ```
 

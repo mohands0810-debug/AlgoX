@@ -614,6 +614,16 @@ addEventListener('mouseup',()=>{G.drag=null;G.c.classList.remove('drag')});
 function zoom(f,cx){const c=cx??(G.v0+G.v1)/2,n=Math.max(8,(G.v1-G.v0)*f);let a=c-(c-G.v0)*(n/(G.v1-G.v0)),z=a+n;if(a<0){z-=a;a=0}if(z>G.T){a-=z-G.T;z=G.T}G.v0=Math.max(0,a);G.v1=Math.min(G.T,z);gDraw()}
 G.c.addEventListener('wheel',e=>{e.preventDefault();const b=G.c.getBoundingClientRect();zoom(e.deltaY>0?1.2:.83,ti(e.clientX-b.left))},{passive:false});
 $('#zin').onclick=()=>zoom(.6);$('#zout').onclick=()=>zoom(1.6);$('#zreset').onclick=()=>{G.v0=0;G.v1=G.T;gDraw()};
+{% if preview and demo_json and sample1_csv %}
+(function(){
+  try{
+    const csvText = {{ sample1_csv | tojson }};
+    const demoData = {{ demo_json | safe }};
+    setFile(new File([csvText],'sample1.csv',{type:'text/csv'}),csvText);
+    finish(demoData);
+  }catch(e){console.error(e)}
+})();
+{% endif %}
 </script>
 </body>
 </html>

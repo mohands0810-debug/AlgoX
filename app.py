@@ -206,6 +206,18 @@ def index():
     return resp
 
 
+@app.route("/preview")
+def preview_page():
+    from flask import make_response
+    p = BASE / "data" / "demo.json"
+    demo_json = p.read_text(encoding="utf-8") if p.exists() else None
+    s = BASE / "data" / "sample1.csv"
+    sample1_csv = s.read_text(encoding="utf-8") if s.exists() else None
+    resp = make_response(render_template("index.html", preview=True, demo_json=demo_json, sample1_csv=sample1_csv))
+    resp.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+    return resp
+
+
 @app.route("/solve", methods=["POST"])
 def solve():
     iters = int(request.form.get("iters", 500_000))
@@ -294,6 +306,14 @@ def sample(num):
     if not p.exists():
         return "Not found", 404
     return send_file(p, mimetype="text/csv")
+
+
+@app.route("/demo-data")
+def demo_data():
+    p = BASE / "data" / "demo.json"
+    if p.exists():
+        return send_file(p, mimetype="application/json")
+    return "Not found", 404
 
 
 if __name__ == "__main__":
